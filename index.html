@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Walkthrough</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #333;
+      color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
+    }
+
+    /* Container for Layout */
+    .container {
+      display: flex;
+      max-width: 90%;
+      width: 100%;
+      align-items: center;
+      background-color: #444;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Video Section Styling */
+    .video-section {
+      flex: 1;
+      text-align: center;
+    }
+
+    /* Video Styling */
+    video {
+      width: 100%;
+      max-width: 650px;
+      height: auto;
+      background: #000;
+      border-radius: 12px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.7);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    video:hover {
+      transform: scale(1.03);
+      box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.9);
+    }
+
+    /* Separator Line */
+    .separator {
+      width: 2px;
+      background-color: #555;
+      height: 80%;
+      margin: 0 30px;
+      border-radius: 2px;
+    }
+
+    /* Steps Section Styling */
+    .steps-section {
+      flex: 1;
+      padding-left: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 1.2em;
+      line-height: 1.8em;
+      text-align: left;
+      color: #ddd;
+    }
+
+    /* Header Styling */
+    .steps-section h2 {
+      font-size: 1.5em;
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    /* Steps Styling */
+    .steps-section ul {
+      list-style-type: decimal;
+      padding-left: 25px;
+    }
+
+    .steps-section ul li {
+      margin-bottom: 12px;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      color: #ddd;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    }
+
+    /* Enhanced Hover Effects */
+    .steps-section ul li:hover {
+      background-color: #555;
+      color: #fff;
+      font-weight: 500;
+      transform: translateX(5px);
+    }
+
+    /* Custom Bullet Styling */
+    .steps-section ul li::marker {
+      color: #08f;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Video Section -->
+    <div class="video-section">
+      <video id="tutorialVideo" controls>
+        <source src="video-link.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Vertical Separator Line -->
+    <div class="separator"></div>
+
+    <!-- Steps Section -->
+    <div class="steps-section">
+      <h2>Steps</h2>
+      <ul>
+        <!-- Each step has an onclick event to jump to the corresponding video time -->
+        <li onclick="jumpToTime(10)">Introduction to the topic (10 seconds)</li>
+        <li onclick="jumpToTime(30)">Step 1: Preparation (30 seconds)</li>
+        <li onclick="jumpToTime(60)">Step 2: Initial setup (1 minute)</li>
+        <li onclick="jumpToTime(90)">Step 3: Demonstration (1 minute 30 seconds)</li>
+        <li onclick="jumpToTime(120)">Step 4: Final touches (2 minutes)</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Function to jump to a specific time in the video
+    function jumpToTime(time) {
+      const video = document.getElementById('tutorialVideo');
+      video.currentTime = time;
+      video.play();
+    }
+  </script>
+</body>
+</html>
